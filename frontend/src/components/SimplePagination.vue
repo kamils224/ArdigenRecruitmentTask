@@ -3,7 +3,9 @@
     <a-button @click="previousPage" :disabled="disablePreviousButton()"
       >Previous Page</a-button
     >
-    <a-button @click="nextPage" type="primary">Next Page</a-button>
+    <a-button @click="nextPage" type="primary" :disabled="disableNext"
+      >Next Page</a-button
+    >
   </a-space>
 </template>
 
@@ -14,6 +16,10 @@ export default {
     currentPage: {
       type: Number,
       required: true,
+    },
+    disableNext: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {

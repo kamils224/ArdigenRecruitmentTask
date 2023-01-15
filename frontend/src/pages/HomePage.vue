@@ -26,6 +26,7 @@
             @previous-page="previousPage"
             @next-page="nextPage"
             :current-page="this.page"
+            :disable-next="disableNextPage"
           />
         </a-col>
       </a-row>
@@ -89,6 +90,12 @@ export default {
           page: +this.page - 1,
         },
       });
+    },
+  },
+  computed: {
+    disableNextPage() {
+      // the default pagination is 10
+      return this.repositories.length < 10;
     },
   },
   beforeMount() {
