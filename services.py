@@ -10,6 +10,7 @@ class UserRepositoryService:
                                     username: str,
                                     page: int = 1,
                                     per_page: int = 10):
+
         return await self.api.get_user_repositories(username, page=page, per_page=per_page)
 
 

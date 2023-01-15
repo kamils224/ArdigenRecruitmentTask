@@ -1,11 +1,11 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 
-from schemas import Pagination
+from schemas import Pagination, Repository
 from services import UserRepositoryService, get_user_repository_service
 
 router = APIRouter(
     prefix='/users',
-    tags=['user']
+    tags=['users']
 )
 
 
@@ -13,7 +13,7 @@ async def pagination_parameters(page: int = 1, per_page: int = 10):
     return Pagination(page=page, per_page=per_page)
 
 
-@router.get("/{username}/repos")
+@router.get("/{username}/repos", response_model=list[Repository])
 async def get_user_repositories(username: str,
                                 pagination: Pagination = Depends(pagination_parameters),
                                 service: UserRepositoryService = Depends(get_user_repository_service)):

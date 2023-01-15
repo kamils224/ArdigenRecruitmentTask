@@ -2,6 +2,8 @@ import re
 from abc import abstractmethod, ABC
 
 import httpx
+from fastapi import HTTPException
+from httpx import Response
 
 from config import get_settings
 from schemas import Repository
@@ -27,5 +29,8 @@ class GithubApi(BaseRepositoryApi):
         async with self.async_client as client:
             response = await client.get(url, params=params)
             data = response.json()
+            # API rate limit
+            if response.status_code == 403:
+                raise HTTPException(status_code=403, detail=data["message"])
 
         return [Repository.parse_obj(item) for item in data]
