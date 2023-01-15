@@ -3,11 +3,11 @@
 This guide is for Linux systems only.
 
 ## Project setup (Fast API Backend)
+Python version 3.10
+
 Create python virtual environment and from the root directory run:
 ```
 python -m venv venv
-```
-```
 source venv/bin/activate
 ```
 ### Install dependencies
@@ -24,7 +24,7 @@ black .
 ```
 
 ## Project setup (Vue Frontend)
-From `/frontend` directory run 
+From `/frontend` directory run:
 
 ### Install dependencies
 
