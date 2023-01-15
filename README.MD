@@ -1,8 +1,15 @@
 # Full-stack Developer Recruitment Task 
 
+This guide is for Linux systems only.
+
 ## Project setup (Fast API Backend)
 Create python virtual environment and from the root directory run:
-
+```
+python -m venv venv
+```
+```
+source venv/bin/activate
+```
 ### Install dependencies
 ```
 pip install -r requirements.txt
@@ -35,6 +42,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
