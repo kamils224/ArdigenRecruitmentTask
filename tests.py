@@ -42,11 +42,16 @@ client = TestClient(app)
 async def override_get_user_repository_service():
     return UserRepositoryService(api=FakeGithubApi())
 
-app.dependency_overrides[get_user_repository_service] = override_get_user_repository_service
+
+app.dependency_overrides[
+    get_user_repository_service
+] = override_get_user_repository_service
 
 
 class FakeGithubApi(BaseRepositoryApi):
-    async def get_user_repositories(self, username: str, page: int = 1, per_page: int = 10) -> list[Repository]:
+    async def get_user_repositories(
+        self, username: str, page: int = 1, per_page: int = 10
+    ) -> list[Repository]:
         return [Repository.parse_obj(item) for item in fake_data]
 
 

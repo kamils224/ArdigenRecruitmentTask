@@ -1,6 +1,7 @@
 <template>
   <a-input-search
     v-model="username"
+    :defaultValue="defaultValue"
     placeholder="GitHub Username"
     :loading="loading"
     enter-button
@@ -16,7 +17,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    initialValue: {
+    defaultValue: {
       type: String,
       default: "",
     },
@@ -28,9 +29,6 @@ export default {
     handleSearch(value, event) {
       this.$emit("search", value, event);
     },
-  },
-  beforeMount() {
-    this.username = this.initialValue;
   },
 };
 </script>

@@ -7,7 +7,7 @@
       <a-row justify="center">
         <a-col :span="24" :sm="12" :lg="8">
           <SearchInput
-            :initial-value="username"
+            :default-value="username"
             @search="handleSearchUser"
             :loading="loading"
           />
