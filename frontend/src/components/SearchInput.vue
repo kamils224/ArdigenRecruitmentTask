@@ -1,25 +1,38 @@
 <template>
-<div>
-  <input type="text" placeholder="Search.." name="search">
-  <button type="submit">Search</button></div>
+  <a-input-search
+    v-model="username"
+    placeholder="GitHub Username"
+    :loading="loading"
+    enter-button
+    :search="handleSearch"
+  />
 </template>
 
 <script>
 export default {
   name: "SearchInput",
-  data: () => {
-    return {
-      search: ""
-    }
+  props: {
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    initialValue: {
+      type: String,
+      default: "",
+    },
   },
+  data: () => ({
+    username: "",
+  }),
   methods: {
-    onSearch() {
-      console.log("search");
-    }
-  }
-}
+    handleSearch(value, event) {
+      this.$emit("search", value, event);
+    },
+  },
+  beforeMount() {
+    this.username = this.initialValue;
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -19,11 +19,6 @@ fake_data = [
         "open_issues": 0,
         "created_at": "2018-11-18T11:26:35+00:00",
         "updated_at": "2020-05-15T15:51:09+00:00",
-        "owner": {
-            "id": 52448259,
-            "login": "kamils224",
-            "avatar_url": "https://avatars.githubusercontent.com/u/52448259?v=4"
-        }
     },
     {
         "id": 303857089,
@@ -38,11 +33,6 @@ fake_data = [
         "open_issues": 0,
         "created_at": "2020-10-14T00:02:55+00:00",
         "updated_at": "2020-10-22T16:06:55+00:00",
-        "owner": {
-            "id": 52448259,
-            "login": "kamils224",
-            "avatar_url": "https://avatars.githubusercontent.com/u/52448259?v=4"
-        }
     },
 ]
 

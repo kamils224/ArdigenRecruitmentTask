@@ -17,4 +17,6 @@ async def pagination_parameters(page: int = 1, per_page: int = 10):
 async def get_user_repositories(username: str,
                                 pagination: Pagination = Depends(pagination_parameters),
                                 service: UserRepositoryService = Depends(get_user_repository_service)):
+    # currently we skip details about pagination like total pages etc.,
+    # it is not provided by GitHub api by default and needs to be calculated
     return await service.get_user_repositories(username, page=pagination.page, per_page=pagination.per_page)

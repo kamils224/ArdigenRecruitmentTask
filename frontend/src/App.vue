@@ -1,24 +1,15 @@
 <template>
-  <div>
-  <HomePage />
-  </div>
+  <router-view :key="$route.fullPath"></router-view>
 </template>
 
 <script>
-import HomePage from "@/pages/HomePage.vue";
-
 export default {
-  name: 'App',
+  name: "App",
 
-  components: {
-    HomePage
-  },
+  components: {},
 
-  data: () => ({
-  }),
-}
+  data: () => ({}),
+};
 </script>
 
-<style lang="scss">
-@import "./main.scss";
-</style>
+<style></style>
