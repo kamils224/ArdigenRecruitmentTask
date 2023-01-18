@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 
 from schemas import Pagination, Repository
 from services import UserRepositoryService, get_user_repository_service
