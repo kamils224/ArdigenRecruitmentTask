@@ -15,7 +15,7 @@ class Repository(BaseModel):
     html_url: str
     stargazers_count: int
     watchers_count: int
-    language: str
+    language: str | None
     forks_count: int
     size: int
     open_issues: int
