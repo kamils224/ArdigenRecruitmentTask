@@ -53,6 +53,9 @@ export async function getUserRepositories(username, page = 1) {
       ),
     };
   } catch (error) {
+    if (error.response.data.detail) {
+      return { error: error.response.data.detail };
+    }
     return { error: "Not found" };
   }
 }

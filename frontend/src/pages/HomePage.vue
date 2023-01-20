@@ -10,6 +10,7 @@
             :default-value="username"
             @search="handleSearchUser"
             :loading="loading"
+            :error="errorMessage"
           />
         </a-col>
       </a-row>
@@ -51,7 +52,6 @@ export default {
     repositories: [],
     currentPage: 1,
     loading: false,
-    error: false,
     errorMessage: "",
     username: "",
     page: 1,

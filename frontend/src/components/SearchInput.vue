@@ -1,12 +1,15 @@
 <template>
-  <a-input-search
-    v-model="username"
-    :defaultValue="defaultValue"
-    placeholder="GitHub Username"
-    :loading="loading"
-    enter-button
-    :search="handleSearch"
-  />
+  <div>
+    <a-input-search
+      v-model="username"
+      :defaultValue="defaultValue"
+      placeholder="GitHub Username"
+      :loading="loading"
+      enter-button
+      :onSearch="handleSearch"
+    />
+    <p class="error" v-if="error">{{ error }}</p>
+  </div>
 </template>
 
 <script>
@@ -21,6 +24,7 @@ export default {
       type: String,
       default: "",
     },
+    error: String,
   },
   data: () => ({
     username: "",
@@ -33,4 +37,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.error {
+  color: red;
+  margin-left: 10px;
+}
+</style>
